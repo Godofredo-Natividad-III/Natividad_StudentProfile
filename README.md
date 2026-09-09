@@ -2,28 +2,23 @@
 
 ## Project Description
 
-This project is a Basic Student Profile mobile application developed using Apache Cordova. It presents personal information, educational background, interests, goals, and technical skills in a simple mobile-friendly layout.
+This project is an improved Student Profile mobile application developed using Apache Cordova, HTML, and CSS. It presents personal information, interests, educational background, goals, and programming skills in a clean and responsive layout.
 
-## Technologies Used
+The application was improved from Activity 2 to Activity 3 by adding responsive design for Desktop, Tablet, and Mobile screen sizes, better spacing, typography, visual hierarchy, accessible controls, and a consistent visual design.
 
-- HTML
-- CSS
-- Apache Cordova
-- Android SDK
-- Gradle
-
-## Project Structure
+## Application Structure
 
 ```text
-NATIVIDAD_START/
+Natividad_StudentProfile/
+│
 ├── www/
 │   ├── css/
 │   │   └── index.css
 │   ├── img/
 │   │   └── profile.jpg
 │   └── index.html
+│
 ├── config.xml
 ├── package.json
-├── package-lock.json
-├── .gitignore
-└── README.md
+├── README.md
+└── platforms/

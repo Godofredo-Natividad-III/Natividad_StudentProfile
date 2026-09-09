@@ -22,7 +22,8 @@ NATIVIDAD_START/
 │   ├── img/
 │   │   └── profile.jpg
 │   └── index.html
-├── platforms/
 ├── config.xml
 ├── package.json
+├── package-lock.json
+├── .gitignore
 └── README.md

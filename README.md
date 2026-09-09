@@ -88,12 +88,13 @@ Mobile view displays the skills in one column with stacked navigation controls.
 
 ```bash
 npm install
-```bash
+
 cordova platform add android
-```bash
+
 cordova build android
-```bash
+
 cordova run android
+
 ## Responsive Screenshots
 
 ### Desktop

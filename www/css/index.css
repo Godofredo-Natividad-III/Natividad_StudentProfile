@@ -1,0 +1,140 @@
+```css
+/* GENERAL SETTINGS */
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: #17365d;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+header h1 {
+    margin: 15px 0 5px;
+    font-size: 28px;
+}
+
+.subtitle {
+    margin: 0 0 20px;
+    font-size: 18px;
+}
+
+
+/* NAVIGATION MENU */
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: #24558a;
+    padding: 10px 25px;
+    margin: 5px;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background-color: #3678b8;
+}
+
+
+/* SECTIONS */
+
+section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #17365d;
+    border-bottom: 2px solid #17365d;
+    padding-bottom: 10px;
+}
+
+section h3 {
+    color: #24558a;
+    margin-top: 25px;
+}
+
+
+/* SKILLS */
+
+.skill {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f2f4f7;
+    border-left: 5px solid #24558a;
+    border-radius: 5px;
+}
+
+.skill h3 {
+    margin-top: 0;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #17365d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+/* MOBILE RESPONSIVE DESIGN */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    section {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+}
+```

@@ -1,2 +1,28 @@
+# Natividad Student Profile
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8446577c-1797-42a2-bf7e-b2a03b6e9979" />
+## Project Description
+
+This project is a Basic Student Profile mobile application developed using Apache Cordova. It presents personal information, educational background, interests, goals, and technical skills in a simple mobile-friendly layout.
+
+## Technologies Used
+
+- HTML
+- CSS
+- Apache Cordova
+- Android SDK
+- Gradle
+
+## Project Structure
+
+```text
+NATIVIDAD_START/
+├── www/
+│   ├── css/
+│   │   └── index.css
+│   ├── img/
+│   │   └── profile.jpg
+│   └── index.html
+├── platforms/
+├── config.xml
+├── package.json
+└── README.md

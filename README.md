@@ -1,4 +1,4 @@
-# Natividad Student Profile
+# Natividad Student Profile```
 
 ## Project Description
 
@@ -92,8 +92,11 @@ Natividad_StudentProfile
 ├── config.xml
 ├── package.json
 └── README.md
+```
 
 ## How to Run
+```
+
 
 1. Install Node.js and Apache Cordova.
 2. Open the project folder in Visual Studio Code.
@@ -104,9 +107,9 @@ Natividad_StudentProfile
 7. Make sure the emulator is connected.
 8. Run the application using:
 
-```text
+
 cordova run android.
-```
+
 
 
 ## Screenshots

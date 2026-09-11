@@ -113,7 +113,6 @@ cordova run android
 
 
 
-```markdown
 ## Screenshots
 
 ### Profile

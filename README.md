@@ -107,9 +107,9 @@ Natividad_StudentProfile
 7. Make sure the emulator is connected.
 8. Run the application using:
 
-
+```text
 cordova run android.
-
+```
 
 
 ## Screenshots

@@ -2,119 +2,136 @@
 
 ## Project Description
 
-This project is an improved Student Profile mobile application developed using Apache Cordova, HTML, and CSS. It presents personal information, interests, educational background, goals, and programming skills in a clean and responsive layout.
+This project is a responsive multi-page Student Profile mobile application developed using Apache Cordova, HTML, and CSS. It was created as part of my IT coursework.
 
-The application was improved from Activity 2 to Activity 3 by adding responsive design for Desktop, Tablet, and Mobile screen sizes, better spacing, typography, visual hierarchy, accessible controls, and a consistent visual design.
+The application presents my personal information, background, skills, projects, and contact information through separate pages with consistent navigation and responsive design.
 
-## Application Structure
+## Application Pages
 
-```text
-Natividad_StudentProfile/
-│
-├── www/
-│   ├── css/
-│   │   └── index.css
-│   ├── img/
-│   │   └── profile.jpg
-│   └── index.html
-│
-├── config.xml
-├── package.json
-├── README.md
-└── platforms/
-```
+### 1. Profile
 
-## Responsive Design
+The Profile page serves as the homepage of the application. It introduces me with my profile picture, complete name, short tagline, and a brief description.
 
-The application uses CSS media queries to provide a responsive layout for different screen sizes.
+### 2. About
 
-### Desktop
+The About page contains my personal introduction, interests, educational background, and goals.
 
-The desktop layout displays the six skills in three columns. The content area is wider and provides comfortable spacing for larger screens.
+### 3. Skills
 
-### Tablet
+The Skills page displays my programming, web development, problem-solving, and communication skills with short descriptions for each skill.
 
-The tablet layout displays the six skills in two columns. Spacing and font sizes are adjusted to fit tablet screens comfortably.
+### 4. Projects
 
-### Mobile
+The Projects page shows sample projects I have worked on. Each project includes a project title, description, my role or contribution, and the technologies or tools used.
 
-The mobile layout displays the skills in one column. The navigation controls are stacked vertically to make them easier to use on smaller screens.
+### 5. Contact
 
-## UI/UX Principles Applied
-
-The following UI/UX principles were applied:
-
-- **Responsive Layout** – The application adjusts to Desktop, Tablet, and Mobile screen sizes.
-- **Mobile-Friendly Spacing** – Padding, margins, and spacing are adjusted for smaller screens.
-- **Typography** – Clear and readable fonts and appropriate font sizes are used.
-- **Visual Hierarchy** – Headings, sections, and skill cards are organized clearly.
-- **Usable Controls** – Navigation links have sufficient size and spacing for easy clicking or tapping.
-- **Accessibility** – Clear text, readable contrast, focus states, and simple navigation are provided.
-- **Consistent Design** – Colors, borders, spacing, and card styles are consistent throughout the application.
+The Contact page provides my email address, GitHub profile, and social media contact information.
 
 ## Navigation
 
-The application uses same-page navigation through HTML anchor links.
+The application uses standard HTML links to navigate between the five pages:
 
-- **About** – Links to the About section.
-- **Skills** – Links to the Skills section.
+- Profile
+- About
+- Skills
+- Projects
+- Contact
 
-No JavaScript is used for navigation.
+Each page contains the same navigation menu, allowing users to easily move between pages and return to the Profile homepage.
 
-## Responsive Screenshots
+No JavaScript is required for navigation.
 
-### Desktop
+## Responsive Design
 
-<img width="1916" height="1038" alt="Desktop Screenshot" src="https://github.com/user-attachments/assets/49be769d-e550-41bc-ae1a-9a3fee9e98e0" />
+The application is designed to work properly on different screen sizes, including:
 
-### Tablet
+- Desktop
+- Tablet
+- Mobile
 
-<img width="1272" height="1039" alt="Screenshot 2026-09-09 224922" src="https://github.com/user-attachments/assets/3c7a52bb-cb8e-4c38-bfdf-3c5c01be5d9e" />
+CSS media queries are used to adjust the layout, navigation, spacing, font sizes, and content cards for different screen widths.
 
+The responsive design helps prevent horizontal scrolling, overlapping content, cut-off text, and distorted images.
 
-### Mobile
+## UI/UX
 
-<img width="1358" height="1034" alt="Screenshot 2026-09-09 225237" src="https://github.com/user-attachments/assets/6798c53d-2f01-4403-92a5-cb2bc10f43f9" />
+The application uses a consistent blue-and-white color scheme, readable typography, clear headings, organized content sections, and easy-to-use navigation buttons.
 
+The design focuses on:
+
+- Consistent layout across all pages
+- Clear visual hierarchy
+- Readable text
+- Proper spacing
+- Easy navigation
+- Mobile-friendly design
+- Accessibility-friendly links
+- Descriptive alternative text for the profile image
+
+## Project Structure
+
+```text
+Natividad_StudentProfile
+├── www
+│   ├── index.html
+│   ├── about.html
+│   ├── skills.html
+│   ├── projects.html
+│   ├── contact.html
+│   ├── css
+│   │   └── index.css
+│   └── img
+│       └── profile.jpg
+├── screenshots
+│   ├── profile.png
+│   ├── about.png
+│   ├── skills.png
+│   ├── projects.png
+│   └── contact.png
+├── config.xml
+├── package.json
+└── README.md
 
 ## How to Run
 
 1. Install Node.js and Apache Cordova.
 2. Open the project folder in Visual Studio Code.
-3. Install the project dependencies:
+3. Open the terminal in the project folder.
+4. Install the project dependencies.
+5. Add the Android platform if needed.
+6. Start an Android emulator.
+7. Make sure the emulator is connected.
+8. Run the application using:
 
-```bash
-npm install
-```
-
-4. Add the Android platform:
-
-```bash
-cordova platform add android
-```
-
-5. Build the Android application:
-
-```bash
-cordova build android
-```
-
-6. Run the application on the Android emulator:
-
-```bash
+```text
 cordova run android
-```
 
-## Technologies Used
 
-- Apache Cordova
-- HTML5
-- CSS3
-- Android Emulator
-- Visual Studio Code
 
-## Author
 
-**Godofredo Tan Natividad III**
 
-© 2026 Godofredo Tan Natividad III. All Rights Reserved.
+
+
+```markdown
+## Screenshots
+
+### Profile
+
+![Profile Screenshot](screenshots/profile.png)
+
+### About
+
+![About Screenshot](screenshots/about.png)
+
+### Skills
+
+![Skills Screenshot](screenshots/skills.png)
+
+### Projects
+
+![Projects Screenshot](screenshots/projects.png)
+
+### Contact
+
+![Contact Screenshot](screenshots/contact.png)

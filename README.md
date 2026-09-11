@@ -105,12 +105,8 @@ Natividad_StudentProfile
 8. Run the application using:
 
 ```text
-cordova run android
-
-
-
-
-
+cordova run android.
+```
 
 
 ## Screenshots

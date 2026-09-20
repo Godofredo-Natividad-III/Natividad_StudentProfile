@@ -1,49 +1,248 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Godofredo Natividad III - Profile</title>
+
     <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
 
 <header>
-    <img src="img/profile.jpg" alt="Profile Picture" class="profile-picture">
 
-    <h1>Godofredo Tan Natividad III</h1>
-    <p>Student | Aspiring IT Professional</p>
+    <img
+        src="img/profile.jpg"
+        alt="Profile Picture"
+        class="profile-picture"
+    >
 
-    <nav>
+    <h1 id="displayFullName">
+        Godofredo Tan Natividad III
+    </h1>
+
+    <p id="displayCourse">
+        Student | Aspiring IT Professional
+    </p>
+
+    <nav aria-label="Main navigation">
+
         <a href="index.html">Profile</a>
         <a href="about.html">About</a>
         <a href="skills.html">Skills</a>
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
+
     </nav>
+
 </header>
 
 <main>
-    <section>
+
+    <!-- PROFILE VIEW -->
+
+    <section id="profileView">
+
         <h2>Welcome to My Profile</h2>
 
         <p>
-            Hello! I am Godofredo Tan Natividad III, an Information Technology
-            student who is interested in learning programming, web development,
-            and other technologies.
+            Hello! I am
+            <span id="welcomeName">
+                Godofredo Tan Natividad III
+            </span>,
+            an Information Technology student who is interested
+            in learning programming, web development, and other
+            technologies.
         </p>
 
-        <p>
-            This website showcases my background, skills, projects, and contact
-            information as part of my IT coursework.
-        </p>
+        <div class="profile-information">
+
+            <h3>Course</h3>
+
+            <p id="profileCourse">
+                BS Information Technology
+            </p>
+
+            <h3>Year Level</h3>
+
+            <p id="displayYearLevel">
+                4th Year
+            </p>
+
+            <h3>About Me</h3>
+
+            <p id="displayAbout">
+                I am an Information Technology student interested
+                in programming and web development.
+            </p>
+
+            <h3>Skills</h3>
+
+            <ul id="displaySkills">
+
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+
+            </ul>
+
+        </div>
+
+        <button
+            type="button"
+            id="editProfileButton"
+            class="profile-button"
+        >
+            Edit Profile
+        </button>
+
     </section>
+
+
+    <!-- EDIT PROFILE FORM -->
+
+    <section
+        id="editProfileView"
+        class="edit-section"
+        hidden
+    >
+
+        <h2>Edit Profile</h2>
+
+        <p
+            id="profileError"
+            class="error-message"
+            role="alert"
+            aria-live="polite"
+        ></p>
+
+        <form id="editProfileForm">
+
+            <div class="form-group">
+
+                <label for="editFullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="editFullName"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editCourse">
+                    Course
+                </label>
+
+                <input
+                    type="text"
+                    id="editCourse"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editYearLevel">
+                    Year Level
+                </label>
+
+                <input
+                    type="text"
+                    id="editYearLevel"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editAbout">
+                    About Me
+                </label>
+
+                <textarea
+                    id="editAbout"
+                    rows="5"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editSkills">
+                    Skills
+                </label>
+
+                <textarea
+                    id="editSkills"
+                    rows="3"
+                    placeholder="HTML, CSS, JavaScript"
+                    required
+                ></textarea>
+
+                <small>
+                    Separate your skills using commas.
+                </small>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="submit"
+                    class="profile-button save-button"
+                >
+                    Save
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelEditButton"
+                    class="profile-button cancel-button"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
 </main>
 
+
 <footer>
-    <p>© 2026 Godofredo Tan Natividad III. All Rights Reserved.</p>
+
+    <p>
+        © 2026 Godofredo Tan Natividad III.
+        All Rights Reserved.
+    </p>
+
 </footer>
 
+
+<!-- Cordova and JavaScript -->
+
+<script src="cordova.js"></script>
+<script src="js/profile.js"></script>
+
 </body>
+
 </html>

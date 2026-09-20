@@ -233,3 +233,111 @@ footer p {
         padding: 22px 15px;
     }
 }
+/* =========================================
+   ACTIVITY 5 - EDIT PROFILE
+========================================= */
+
+.edit-section {
+    margin-top: 35px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cfd8e3;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 2px solid #1f5fae;
+    border-color: #1f5fae;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+}
+
+.profile-button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #1f5fae;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.profile-button:hover {
+    background: #174a87;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.save-button {
+    background: #1f5fae;
+}
+
+.save-button:hover {
+    background: #174a87;
+}
+
+.cancel-button {
+    background: #777;
+}
+
+.cancel-button:hover {
+    background: #555;
+}
+
+.error-message {
+    min-height: 24px;
+    margin-bottom: 15px;
+    color: #c62828;
+    font-weight: bold;
+}
+
+/* Mobile Edit Profile */
+@media (max-width: 600px) {
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .profile-button {
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+    }
+}

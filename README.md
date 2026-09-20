@@ -222,19 +222,4 @@ All five tests work successfully.
 
 ````
 
-**Important:** Before committing, make sure you actually have these two new screenshot files:
 
-```text
-screenshots/edit-profile.png
-screenshots/updated-profile.png
-````
-
-If you haven't taken them yet, **don't worry—we can do those next.**
-
-After replacing the README, run:
-
-```bash
-git status
-```
-
-Then send me what it says.

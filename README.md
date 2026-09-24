@@ -8,6 +8,8 @@ The application presents my personal information, background, skills, projects, 
 
 The application also includes an **Edit Profile** feature that allows the user to update profile information dynamically and save the changes using browser localStorage.
 
+The application was further enhanced with a **Camera Integration** feature that allows the user to capture and change their profile picture using the device camera.
+
 ## Application Pages
 
 ### 1. Profile
@@ -21,6 +23,8 @@ It also includes the **Edit Profile** feature where the user can update:
 * Year Level
 * About Me
 * Skills
+
+The Profile page also includes a **Change Profile Picture** button that allows the user to capture a new profile picture using the device camera.
 
 ### 2. About
 
@@ -57,7 +61,7 @@ The profile information is updated dynamically without manually changing the HTM
 
 ## JavaScript Functionality
 
-JavaScript is used to manage the Edit Profile feature.
+JavaScript is used to manage the Edit Profile feature and camera integration.
 
 The JavaScript:
 
@@ -68,6 +72,10 @@ The JavaScript:
 * Saves updated information
 * Updates the profile after saving
 * Handles the Cancel button
+* Opens the device camera
+* Receives the captured image
+* Displays the captured image as the profile picture
+* Saves the profile picture for later use
 
 The following fields are required:
 
@@ -91,9 +99,132 @@ The saved information includes:
 * About Me
 * Skills
 
-This allows the updated profile information to remain available after closing and reopening the application.
+The captured profile picture is also saved using localStorage.
+
+This allows the updated profile information and profile picture to remain available after closing and reopening the application.
 
 If no saved profile information exists, the application uses the default profile information.
+
+If no saved profile picture exists, the application uses the default profile picture.
+
+## Activity 6 - Camera Integration
+
+The Student Profile application was extended with a camera feature using the **Cordova Camera Plugin**.
+
+### Camera Feature
+
+The Profile page includes a **Change Profile Picture** button.
+
+The user can:
+
+* Open the device camera
+* Capture a photo
+* Preview the captured photo in the profile
+* Retake the photo by capturing another image
+* Cancel the camera without changing the current profile picture
+
+The captured image is displayed immediately as the new profile picture.
+
+When another photo is captured, it replaces the previous profile picture.
+
+### Cordova Camera Plugin
+
+The application uses the **cordova-plugin-camera** plugin.
+
+The plugin allows JavaScript to communicate with the native device camera.
+
+The plugin was installed using:
+
+```text
+cordova plugin add cordova-plugin-camera
+```
+
+The installed plugin is:
+
+```text
+cordova-plugin-camera 8.0.0
+```
+
+The application uses the Cordova Camera API:
+
+```text
+navigator.camera.getPicture()
+```
+
+JavaScript calls the Cordova Camera API, the native Android camera opens, and the captured image is returned to the application.
+
+### How the Camera Works
+
+The camera feature follows these steps:
+
+1. The user presses **Change Profile Picture**.
+2. JavaScript checks if the Cordova Camera API is available.
+3. The device camera is opened.
+4. The user captures a photo.
+5. The camera returns the image to the application.
+6. The image is displayed as the new profile picture.
+7. The image is saved using localStorage.
+8. The saved image is loaded again when the application starts.
+
+### Image Preview
+
+After taking a photo, the captured image is immediately displayed in the Profile page.
+
+This allows the user to preview the new profile picture without manually selecting an image file.
+
+### Retake Photo
+
+The user can press **Change Profile Picture** again and capture another photo.
+
+The new photo replaces the previous profile picture.
+
+### Image Persistence
+
+The captured profile picture is converted into a Base64 image and saved using localStorage.
+
+The saved profile picture is loaded again when the application starts.
+
+This allows the profile picture to remain after closing and reopening the application.
+
+### Camera Cancellation
+
+If the user cancels the camera, the application does not crash.
+
+The previous profile picture remains unchanged.
+
+An appropriate message is displayed to inform the user that the camera was cancelled or unavailable.
+
+### Camera Error Handling
+
+The application also handles camera errors.
+
+If the camera is unavailable or an error occurs, the application displays a message and keeps the current profile picture.
+
+This prevents the application from crashing.
+
+## Why Cordova?
+
+Apache Cordova allows a web-based application using HTML, CSS, and JavaScript to access native device features.
+
+For this project, Cordova is used to connect the JavaScript application to the device camera.
+
+The Camera Plugin provides the native camera functionality while the application interface remains built using HTML, CSS, and JavaScript.
+
+## JavaScript and Device Communication
+
+The application communicates with the native device camera through the Cordova Camera API.
+
+The JavaScript code calls:
+
+```text
+navigator.camera.getPicture()
+```
+
+The Cordova Camera Plugin processes the request and opens the native device camera.
+
+After the user captures a photo, the image data is returned to the JavaScript code.
+
+The JavaScript then displays the image and saves it using localStorage.
 
 ## Navigation
 
@@ -135,6 +266,8 @@ The design focuses on:
 * Mobile-friendly design
 * Accessibility-friendly links
 * Descriptive alternative text for the profile image
+* Simple and clear profile editing controls
+* Easy access to the camera feature
 
 ## Project Structure
 
@@ -157,7 +290,9 @@ Natividad_StudentProfile
 │   ├── about.png
 │   ├── skills.png
 │   ├── projects.png
-│   └── contact.png
+│   ├── contact.png
+│   ├── edit-profile.png
+│   └── updated-profile.png
 ├── config.xml
 ├── package.json
 └── README.md
@@ -170,13 +305,15 @@ Natividad_StudentProfile
 3. Open the terminal in the project folder.
 4. Install the project dependencies.
 5. Add the Android platform if needed.
-6. Start an Android emulator.
-7. Make sure the emulator is connected.
+6. Start an Android emulator or connect an Android device.
+7. Make sure the device or emulator is connected.
 8. Run the application using:
 
 ```text
 cordova run android
 ```
+
+The camera feature must be tested using the Cordova Android application because it uses the native device camera.
 
 ## Activity 5 Testing
 
@@ -188,7 +325,20 @@ The following functions were tested successfully:
 * Profile persistence after closing and reopening
 * Multiple profile updates
 
-All five tests work successfully.
+All five Activity 5 tests work successfully.
+
+## Activity 6 Testing
+
+The following camera functions are included for testing:
+
+* Open Camera
+* Capture Photo
+* Retake Photo
+* Cancel Camera
+* Restart Application
+* Camera Error
+
+The application is designed to keep the previous profile picture when the camera is cancelled or unavailable.
 
 ## Screenshots
 
@@ -219,7 +369,3 @@ All five tests work successfully.
 ### Contact
 
 ![Contact Screenshot](screenshots/contact.png)
-
-````
-
-

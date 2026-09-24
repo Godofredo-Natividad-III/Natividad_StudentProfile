@@ -1,14 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Godofredo Natividad III - Profile</title>
 
-    <link rel="stylesheet" href="css/index.css">
+    <link
+        rel="stylesheet"
+        href="css/index.css"
+    >
+
 </head>
 
 <body>
@@ -16,6 +24,7 @@
 <header>
 
     <img
+        id="profilePicture"
         src="img/profile.jpg"
         alt="Profile Picture"
         class="profile-picture"
@@ -32,14 +41,19 @@
     <nav aria-label="Main navigation">
 
         <a href="index.html">Profile</a>
+
         <a href="about.html">About</a>
+
         <a href="skills.html">Skills</a>
+
         <a href="projects.html">Projects</a>
+
         <a href="contact.html">Contact</a>
 
     </nav>
 
 </header>
+
 
 <main>
 
@@ -50,14 +64,19 @@
         <h2>Welcome to My Profile</h2>
 
         <p>
+
             Hello! I am
+
             <span id="welcomeName">
                 Godofredo Tan Natividad III
             </span>,
+
             an Information Technology student who is interested
             in learning programming, web development, and other
             technologies.
+
         </p>
+
 
         <div class="profile-information">
 
@@ -67,11 +86,13 @@
                 BS Information Technology
             </p>
 
+
             <h3>Year Level</h3>
 
             <p id="displayYearLevel">
                 4th Year
             </p>
+
 
             <h3>About Me</h3>
 
@@ -80,17 +101,23 @@
                 in programming and web development.
             </p>
 
+
             <h3>Skills</h3>
 
             <ul id="displaySkills">
 
                 <li>HTML</li>
+
                 <li>CSS</li>
+
                 <li>JavaScript</li>
 
             </ul>
 
         </div>
+
+
+        <!-- EDIT PROFILE BUTTON -->
 
         <button
             type="button"
@@ -98,6 +125,17 @@
             class="profile-button"
         >
             Edit Profile
+        </button>
+
+
+        <!-- CHANGE PROFILE PICTURE BUTTON -->
+
+        <button
+            type="button"
+            id="changeProfilePictureButton"
+            class="profile-button"
+        >
+            Change Profile Picture
         </button>
 
     </section>
@@ -113,12 +151,14 @@
 
         <h2>Edit Profile</h2>
 
+
         <p
             id="profileError"
             class="error-message"
             role="alert"
             aria-live="polite"
         ></p>
+
 
         <form id="editProfileForm">
 
@@ -211,6 +251,7 @@
                     Save
                 </button>
 
+
                 <button
                     type="button"
                     id="cancelEditButton"
@@ -241,6 +282,7 @@
 <!-- Cordova and JavaScript -->
 
 <script src="cordova.js"></script>
+
 <script src="js/profile.js"></script>
 
 </body>

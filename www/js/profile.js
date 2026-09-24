@@ -5,8 +5,11 @@
 // =========================================
 
 const defaultProfile = {
+
     fullName: "Godofredo Tan Natividad III",
+
     course: "BS Information Technology",
+
     yearLevel: "4th Year",
 
     about:
@@ -17,7 +20,9 @@ const defaultProfile = {
         "CSS",
         "JavaScript"
     ]
+
 };
+
 
 // =========================================
 // GET PROFILE FROM LOCALSTORAGE
@@ -57,6 +62,7 @@ function getProfile() {
 
 }
 
+
 // =========================================
 // SAVE PROFILE TO LOCALSTORAGE
 // =========================================
@@ -70,6 +76,7 @@ function saveProfile(profile) {
 
 }
 
+
 // =========================================
 // DISPLAY PROFILE INFORMATION
 // =========================================
@@ -78,7 +85,9 @@ function displayProfile() {
 
     const profile = getProfile();
 
+
     // Load saved profile picture
+
     const savedPicture =
         localStorage.getItem("profilePicture");
 
@@ -89,6 +98,7 @@ function displayProfile() {
         ).src = savedPicture;
 
     }
+
 
     // Full Name
 
@@ -142,6 +152,7 @@ function displayProfile() {
 
     skillsList.innerHTML = "";
 
+
     profile.skills.forEach(function (skill) {
 
         const listItem =
@@ -155,6 +166,7 @@ function displayProfile() {
 
 }
 
+
 // =========================================
 // OPEN EDIT PROFILE
 // =========================================
@@ -163,21 +175,26 @@ function openEditProfile() {
 
     const profile = getProfile();
 
+
     document.getElementById(
         "editFullName"
     ).value = profile.fullName;
+
 
     document.getElementById(
         "editCourse"
     ).value = profile.course;
 
+
     document.getElementById(
         "editYearLevel"
     ).value = profile.yearLevel;
 
+
     document.getElementById(
         "editAbout"
     ).value = profile.about;
+
 
     document.getElementById(
         "editSkills"
@@ -185,27 +202,22 @@ function openEditProfile() {
         profile.skills.join(", ");
 
 
-    // Hide profile view
-
     document.getElementById(
         "profileView"
     ).hidden = true;
 
-
-    // Show edit form
 
     document.getElementById(
         "editProfileView"
     ).hidden = false;
 
 
-    // Clear error message
-
     document.getElementById(
         "profileError"
     ).textContent = "";
 
 }
+
 
 // =========================================
 // CANCEL EDITING
@@ -213,27 +225,22 @@ function openEditProfile() {
 
 function cancelEdit() {
 
-    // Hide edit form
-
     document.getElementById(
         "editProfileView"
     ).hidden = true;
 
-
-    // Show profile view
 
     document.getElementById(
         "profileView"
     ).hidden = false;
 
 
-    // Clear error
-
     document.getElementById(
         "profileError"
     ).textContent = "";
 
 }
+
 
 // =========================================
 // VALIDATE AND SAVE PROFILE
@@ -244,32 +251,35 @@ function handleProfileSave(event) {
     event.preventDefault();
 
 
-    // Get entered information
-
     const fullName =
         document.getElementById(
             "editFullName"
         ).value.trim();
+
 
     const course =
         document.getElementById(
             "editCourse"
         ).value.trim();
 
+
     const yearLevel =
         document.getElementById(
             "editYearLevel"
         ).value.trim();
+
 
     const about =
         document.getElementById(
             "editAbout"
         ).value.trim();
 
+
     const skillsText =
         document.getElementById(
             "editSkills"
         ).value.trim();
+
 
     const errorMessage =
         document.getElementById(
@@ -380,7 +390,7 @@ function handleProfileSave(event) {
 
 
     // =====================================
-    // SAVE TO LOCALSTORAGE
+    // SAVE PROFILE
     // =====================================
 
     saveProfile(updatedProfile);
@@ -401,17 +411,34 @@ function handleProfileSave(event) {
 
 }
 
+
 // =========================================
 // CAMERA - CHANGE PROFILE PICTURE
 // =========================================
 
 function changeProfilePicture() {
 
+    // Check if Cordova camera is available
+
+    if (
+        !navigator.camera ||
+        typeof Camera === "undefined"
+    ) {
+
+        alert(
+            "Camera is only available when running the Cordova Android app."
+        );
+
+        return;
+
+    }
+
+
     navigator.camera.getPicture(
 
         function (imageData) {
 
-            // Get the profile picture
+            // Get profile picture
 
             const profilePicture =
                 document.getElementById(
@@ -419,37 +446,43 @@ function changeProfilePicture() {
                 );
 
 
-            // Display the new picture
+            // Create image
 
-            profilePicture.src =
-                "data:image/jpeg;base64:" +
+            const imageSource =
+                "data:image/jpeg;base64," +
                 imageData;
 
 
-            // Save the picture
+            // Display new picture
+
+            profilePicture.src =
+                imageSource;
+
+
+            // Save picture
 
             localStorage.setItem(
                 "profilePicture",
-                "data:image/jpeg;base64:" +
-                imageData
+                imageSource
             );
 
         },
 
+
         function (error) {
-
-            // Camera cancelled or error
-
-            alert(
-                "Camera cancelled or unavailable. Your current profile picture was kept."
-            );
 
             console.log(
                 "Camera error or cancelled:",
                 error
             );
 
+
+            alert(
+                "Camera cancelled or unavailable. Your current profile picture was kept."
+            );
+
         },
+
 
         {
 
@@ -476,6 +509,7 @@ function changeProfilePicture() {
     );
 
 }
+
 
 // =========================================
 // INITIALIZE APPLICATION

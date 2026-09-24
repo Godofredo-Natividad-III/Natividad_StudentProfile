@@ -1,4 +1,3 @@
-
 "use strict";
 
 // =========================================
@@ -19,7 +18,6 @@ const defaultProfile = {
         "JavaScript"
     ]
 };
-
 
 // =========================================
 // GET PROFILE FROM LOCALSTORAGE
@@ -59,7 +57,6 @@ function getProfile() {
 
 }
 
-
 // =========================================
 // SAVE PROFILE TO LOCALSTORAGE
 // =========================================
@@ -73,7 +70,6 @@ function saveProfile(profile) {
 
 }
 
-
 // =========================================
 // DISPLAY PROFILE INFORMATION
 // =========================================
@@ -82,6 +78,17 @@ function displayProfile() {
 
     const profile = getProfile();
 
+    // Load saved profile picture
+    const savedPicture =
+        localStorage.getItem("profilePicture");
+
+    if (savedPicture) {
+
+        document.getElementById(
+            "profilePicture"
+        ).src = savedPicture;
+
+    }
 
     // Full Name
 
@@ -135,7 +142,6 @@ function displayProfile() {
 
     skillsList.innerHTML = "";
 
-
     profile.skills.forEach(function (skill) {
 
         const listItem =
@@ -149,7 +155,6 @@ function displayProfile() {
 
 }
 
-
 // =========================================
 // OPEN EDIT PROFILE
 // =========================================
@@ -158,26 +163,21 @@ function openEditProfile() {
 
     const profile = getProfile();
 
-
     document.getElementById(
         "editFullName"
     ).value = profile.fullName;
-
 
     document.getElementById(
         "editCourse"
     ).value = profile.course;
 
-
     document.getElementById(
         "editYearLevel"
     ).value = profile.yearLevel;
 
-
     document.getElementById(
         "editAbout"
     ).value = profile.about;
-
 
     document.getElementById(
         "editSkills"
@@ -207,13 +207,11 @@ function openEditProfile() {
 
 }
 
-
 // =========================================
 // CANCEL EDITING
 // =========================================
 
 function cancelEdit() {
-
 
     // Hide edit form
 
@@ -237,7 +235,6 @@ function cancelEdit() {
 
 }
 
-
 // =========================================
 // VALIDATE AND SAVE PROFILE
 // =========================================
@@ -254,30 +251,25 @@ function handleProfileSave(event) {
             "editFullName"
         ).value.trim();
 
-
     const course =
         document.getElementById(
             "editCourse"
         ).value.trim();
-
 
     const yearLevel =
         document.getElementById(
             "editYearLevel"
         ).value.trim();
 
-
     const about =
         document.getElementById(
             "editAbout"
         ).value.trim();
 
-
     const skillsText =
         document.getElementById(
             "editSkills"
         ).value.trim();
-
 
     const errorMessage =
         document.getElementById(
@@ -409,6 +401,81 @@ function handleProfileSave(event) {
 
 }
 
+// =========================================
+// CAMERA - CHANGE PROFILE PICTURE
+// =========================================
+
+function changeProfilePicture() {
+
+    navigator.camera.getPicture(
+
+        function (imageData) {
+
+            // Get the profile picture
+
+            const profilePicture =
+                document.getElementById(
+                    "profilePicture"
+                );
+
+
+            // Display the new picture
+
+            profilePicture.src =
+                "data:image/jpeg;base64:" +
+                imageData;
+
+
+            // Save the picture
+
+            localStorage.setItem(
+                "profilePicture",
+                "data:image/jpeg;base64:" +
+                imageData
+            );
+
+        },
+
+        function (error) {
+
+            // Camera cancelled or error
+
+            alert(
+                "Camera cancelled or unavailable. Your current profile picture was kept."
+            );
+
+            console.log(
+                "Camera error or cancelled:",
+                error
+            );
+
+        },
+
+        {
+
+            quality: 50,
+
+            destinationType:
+                Camera.DestinationType.DATA_URL,
+
+            sourceType:
+                Camera.PictureSourceType.CAMERA,
+
+            encodingType:
+                Camera.EncodingType.JPEG,
+
+            mediaType:
+                Camera.MediaType.PICTURE,
+
+            correctOrientation: true,
+
+            saveToPhotoAlbum: false
+
+        }
+
+    );
+
+}
 
 // =========================================
 // INITIALIZE APPLICATION
@@ -433,6 +500,18 @@ document.addEventListener(
             .addEventListener(
                 "click",
                 openEditProfile
+            );
+
+
+        // Change Profile Picture Button
+
+        document
+            .getElementById(
+                "changeProfilePictureButton"
+            )
+            .addEventListener(
+                "click",
+                changeProfilePicture
             );
 
 
